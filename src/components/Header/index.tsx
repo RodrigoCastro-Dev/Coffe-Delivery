@@ -1,23 +1,21 @@
-import { HeaderContainer, StyledButton } from './styles'
+import { HeaderContainer } from './styles'
 import Location from '../../assets/location.svg'
-import Coffe from '../../assets/coffee.svg'
-import Cart from '../../assets/cart.svg'
+import Coffee from '../../assets/coffee.svg'
 import { NavLink } from 'react-router-dom'
+import { CartComponent } from './CartComponent'
 
 export function Header() {
   return (
     <HeaderContainer>
-      <span>
-        <NavLink to="/" title="Home">
-          <img src={Coffe} alt="" />
-        </NavLink>
-      </span>
+      <NavLink to="/" title="Home">
+        <img src={Coffee} alt="" />
+      </NavLink>
       <nav>
         <NavLink to="/" title="Localização">
           <img src={Location} alt="" />
         </NavLink>
         <NavLink to="/checkout" title="Checkout">
-          <img src={Cart} alt="" />
+          <CartComponent />
         </NavLink>
       </nav>
     </HeaderContainer>

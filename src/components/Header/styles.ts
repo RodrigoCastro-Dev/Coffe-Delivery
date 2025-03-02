@@ -12,10 +12,10 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   position: fixed;
-  top: 20px;
-  width: 82%;
+  top: 42px;
+  width: 80%;
   background-color: white;
-  z-index: ;
+  height: 0;
 
   nav {
     display: flex;
@@ -35,4 +35,24 @@ export const HeaderContainer = styled.header`
       }
     }
   }
-`
+`;
+
+export const CartIconOrdersDiv = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const CartIconOrdersSpan = styled.span`
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #DBAC2C;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: full-width;
+`;

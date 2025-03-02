@@ -4,7 +4,7 @@ import Icon1 from "../../assets/icons/icon1.svg";
 import Icon2 from "../../assets/icons/icon2.svg";
 import Icon3 from "../../assets/icons/icon3.svg";
 import Icon4 from "../../assets/icons/icon4.svg";
-import { CoffeeList } from "./coffeeList";
+import { CoffeeList } from "./components/CoffeeList";
 
 const iconData = [
   { src: Icon1, text: "Compra simples e segura" },
