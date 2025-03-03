@@ -2,7 +2,7 @@
 
 Welcome to **Coffee Delivery**, a modern and user-friendly web application designed to provide a seamless coffee shopping experience. Built with **React**, **TypeScript**, and **styled-components**, this project showcases dynamic UI components, local storage handling, and state management.
 
-![Coffee Delivery Screenshot](./assets/CoffeeDelivery.png)
+![Coffee Delivery Screenshot](./src/assets/CoffeeDelivery.png)
 
 ---
 
