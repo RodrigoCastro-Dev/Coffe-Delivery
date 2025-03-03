@@ -1,50 +1,56 @@
-# React + TypeScript + Vite
+# ☕ Coffee Delivery - Coffee Shopping Experience
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Coffee Delivery**, a modern and user-friendly web application designed to provide a seamless coffee shopping experience. Built with **React**, **TypeScript**, and **styled-components**, this project showcases dynamic UI components, local storage handling, and state management.
 
-Currently, two official plugins are available:
+![Coffee Delivery Screenshot](./assets/CoffeeDelivery.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+✅ Dynamic cart system with quantity selection per item<br>
+✅ State management using React Hooks for real-time updates<br>
+✅ Persisted cart data using **localStorage**<br>
+✅ Interactive toasts for user feedback (e.g., item added to cart)<br>
+✅ Filtering system for different coffee categories<br>
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Technologies Used
+
+- **React** with TypeScript for type safety and scalability
+- **Styled-Components** for modular and reusable styles
+- **React Hooks** (useState, useContext) for state management
+- **React Toastify** for user notifications
+- **LocalStorage API** for persisting cart data
+- **ContextAPI API**
+- **Lists && Hashes**
+- **Reduce**
+
+---
+
+## 📦 Installation & Running the Project
+
+### 1️⃣ Clone the repository:
+```sh
+  git clone https://github.com/RodrigoCastro-Dev/Coffe-Delivery.git
+  cd coffee-delivery
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2️⃣ Install dependencies:
+```sh
+  npm install
 ```
+
+### 3️⃣ Run the application:
+```sh
+  npm run dev
+```
+
+## 🛒 How It Works
+
+1️⃣ Browse the available coffee options.<br>
+2️⃣ Adjust the quantity using the **+/- buttons**.<br>
+3️⃣ Click the **cart icon** to add the selected coffee to the cart.<br>
+4️⃣ Your selections persist even if you refresh the page!<br>
+
