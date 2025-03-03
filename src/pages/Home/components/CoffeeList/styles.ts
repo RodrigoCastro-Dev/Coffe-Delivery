@@ -85,6 +85,7 @@ export const Title = styled.h1`
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 24px;
+  font-family: "Baloo 2", sans-serif;
 `;
 
 export const TagFilter = styled.div`
@@ -178,7 +179,7 @@ export const Button = styled.button`
 export const CounterContainer = styled.div`
   display: flex;
   align-items: center;
-  background: #f3f2f2;
+  background: #E6E5E5;
   border-radius: 8px;
   padding: 0.4rem;
   gap: 0.4rem;

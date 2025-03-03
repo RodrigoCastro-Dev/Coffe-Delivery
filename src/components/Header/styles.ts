@@ -56,3 +56,7 @@ export const CartIconOrdersSpan = styled.span`
   text-align: center;
   text-transform: full-width;
 `;
+
+export const CounterValueCount = styled.p`
+  margin-top: 3px;
+`;

@@ -1,14 +1,15 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import * as React from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface CartContextProps {
-  cart: { [key: string]: number };
-  setCart: React.Dispatch<React.SetStateAction<{ [key: string]: number }>>;
+  cart: { [key: string]: { quantity: number; [key: string]: any } };
+  setCart: React.Dispatch<React.SetStateAction<{ [key: string]: { quantity: number; [key: string]: any } }>>;
 }
 
 const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
-  const [cart, setCart] = useState<{ [key: string]: number }>({});
+  const [cart, setCart] = useState<{ [key: string]: { quantity: number; [key: string]: any } }>({});
 
   return (
     <CartContext.Provider value={{ cart, setCart }}>
