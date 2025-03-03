@@ -5,7 +5,6 @@ import CartIcon from '../../assets/cart.svg'
 
 export function CartComponent() {
     const { cart } = useCart();
-  
     const [storedState, setStoredState] = useState<string | null>(null);
   
     useEffect(() => {

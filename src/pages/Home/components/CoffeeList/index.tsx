@@ -12,20 +12,16 @@ import cubano from "../../../../assets/coffees/cubano.png";
 import chocolateQuente from "../../../../assets/coffees/chocolate-quente.png";
 import shoppingCart from "../../../../assets/ShoppingCartSimple.svg";
 import { Tag, Container, Title, TagFilter, FilterButton, Grid, CoffeeCard, Image, Tags, CoffeeName, Description, Price, Button, Footer, CardContent } from "./styles";
-import { Counter } from "./Counter";
-import { coffeeProps, handleCart } from "../../../../context/CounterContext";
+import { handleCart } from "../../../../context/CounterContext";
 import { useCart } from "../../../../context/CartContext";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Counter } from "./Counter";
 
 export function CoffeeList() {
   const { setCart } = useCart();
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  const [order, setOrder] = useState<{ [key: string]: number }>({});
-
-  function handleCartCount(coffee: coffeeProps, count: number) {
-    setOrder((prevOrder) => ({ ...prevOrder, [coffee.name]: count }));
-  }
+  const [counts, setCounts] = useState<{ [key: string]: number }>({});
 
   const coffees = [
     { id: '1', name: "Expresso Tradicional", description: "O tradicional café feito com água quente e grãos moídos", tags: ["TRADICIONAL"], price: '10,00', image: expressoTradicional },
@@ -69,9 +65,13 @@ export function CoffeeList() {
               <Description>{coffee.description}</Description>
               <Footer>
                 <Price>R$ {coffee.price}</Price>
-                <Counter onChange={(count) => handleCartCount(coffee, count)} startingValue={1} />
+                <Counter
+                  startingValue={counts[coffee.id] || 1}
+                  onChange={(_, value) => setCounts((prev) => ({ ...prev, [coffee.id]: value }))}
+                />
+
                 <Button onClick={() => {
-                  handleCart(coffee, order[coffee.name] || 1, setCart);
+                  handleCart(coffee, counts[coffee.id], setCart);
                   toast.success(`${coffee.name} adicionado ao carrinho!`);
                 }}>
                   <img src={shoppingCart} alt="" />

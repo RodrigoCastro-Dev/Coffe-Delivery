@@ -38,7 +38,7 @@ export const Container = styled.div`
   background-color: rgba(243, 242, 242, 1.00);
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 17px;
   width: 80%;
   align-items: flex-start;
   justify-content: flex-start;

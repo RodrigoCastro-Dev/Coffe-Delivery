@@ -98,14 +98,19 @@ export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  align-items: stretch;
 `;
 
 export const CoffeeCard = styled.div`
   background: #F3F2F2;
   border-radius: 10px;
-  overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: max-content;
+
   &:hover {
     transform: translateY(-5px);
   }
@@ -115,12 +120,12 @@ export const Image = styled.img`
   width: 100%;
   height: auto;
   object-fit: contain;
-  display: block;
-  max-height: 150px;
+  max-height: 130px;
 `;
 
 export const CardContent = styled.div`
   padding: 16px;
+  height: 100%;
 `;
 
 export const Tags = styled.div`

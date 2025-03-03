@@ -8,22 +8,23 @@ export const StyledButton = styled.button<{ primary?: boolean }>`
 `;
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: fixed;
-  top: 50px;
-  width: 60%;
-  background-color: white;
-  height: 0;
-
-  nav {
+  padding: 10px 20px;
+  background-color: white; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  z-index: 15;
+  div {
     display: flex;
-    gap: 1rem;
+    gap: 15px; 
 
     a {
       max-height: 35px;
-      align-items: center;
+      
       color: ${(props) => props.theme['gray-100']};
 
       &:hover {
@@ -31,21 +32,30 @@ export const HeaderContainer = styled.header`
       }
 
       &.active {
-        // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       }
     }
   }
+`;
+export const DivHeaderContainer = styled.header`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 90%;
 `;
 
 export const CartIconOrdersDiv = styled.div`
   position: relative;
   display: inline-block;
+  max-idth: 38px;
 `;
 
 export const CartIconOrdersSpan = styled.span`
   position: absolute;
   top: -10px;
-  right: -10px;
+  left: 25px;
   background-color: #DBAC2C;
   color: white;
   border-radius: 50%;
@@ -54,7 +64,6 @@ export const CartIconOrdersSpan = styled.span`
   font-size: 12px;
   font-weight: bold;
   text-align: center;
-  text-transform: full-width;
 `;
 
 export const CounterValueCount = styled.p`

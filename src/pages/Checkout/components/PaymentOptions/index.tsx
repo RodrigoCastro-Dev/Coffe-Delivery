@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export const PaymentOptions = () => {
   const [selectedPayment, setSelectedPayment] = useState("");
-
+  
   const handlePaymentChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedPayment(event.target.value);
   };
@@ -16,7 +16,7 @@ export const PaymentOptions = () => {
       <PaymentLabel>
         <RadioInput
           type="radio"
-          name="payment"
+          name="paymentMethod"
           id="credit"
           value="credit"
           checked={selectedPayment === "credit"}
@@ -30,7 +30,7 @@ export const PaymentOptions = () => {
       <PaymentLabel>
         <RadioInput
           type="radio"
-          name="payment"
+          name="paymentMethod"
           id="debit"
           value="debit"
           checked={selectedPayment === "debit"}
@@ -44,7 +44,7 @@ export const PaymentOptions = () => {
       <PaymentLabel>
         <RadioInput
           type="radio"
-          name="payment"
+          name="paymentMethod"
           id="money"
           value="money"
           checked={selectedPayment === "money"}
