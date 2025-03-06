@@ -43,12 +43,6 @@ export const CoffeeImage = styled.img`
   object-fit: contain;
 `;
 
-export const ContainerDiv = styled.div<{ gap?: string }>`
-  display: flex;
-  align-items: center;
-  gap: ${(props) => `${props.gap}rem`};
-`
-
 export const FilterDiv = styled.div`
   align-items: center;
   display: inline-flex;

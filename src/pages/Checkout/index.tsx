@@ -20,7 +20,6 @@ export function Checkout() {
   useEffect(() => {
     const storedStateAsJSON = localStorage.getItem('@coffee-delivery:cart-state-1.0.0');
     const parsedCart = storedStateAsJSON ? JSON.parse(storedStateAsJSON) : {};
-
     setCartState(parsedCart);
   }, []);
 
@@ -34,6 +33,11 @@ export function Checkout() {
       }
     });
   };
+
+  const totalPrice = Object.values(cart).reduce((total: any, item: any) => {
+    const price = parseFloat(item.price.replace(",", "."));
+    return total + price * item.quantity;
+  }, 0);
 
   const handleDelete = (event: React.FormEvent, item: any) => {
     event.preventDefault();
@@ -58,7 +62,7 @@ export function Checkout() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    
+
     if (Object.values(cart).length === 0) {
       toast.error("Seu carrinho está vazio!");
       return;
@@ -141,18 +145,18 @@ export function Checkout() {
                         {item.name}
                         <ItemBodyButtons>
                           <Counter
-                          onChange={(event, count) => {
-                            event.preventDefault();
-                            handleCartUpdate(item, count);
-                          }}
-                          startingValue={item.quantity}
+                            onChange={(event, count) => {
+                              event.preventDefault();
+                              handleCartUpdate(item, count);
+                            }}
+                            startingValue={item.quantity}
                           />
                           <DeleteButton onClick={(event) => handleDelete(event, item)}>
-                          <img src={trash} alt="" /> Remover
+                            <img src={trash} alt="" /> Remover
                           </DeleteButton>
                         </ItemBodyButtons>
                       </Title>
-                      <Title style={{ textAlign: 'right', fontWeight: 'bold' }}>R${item.price}</Title>
+                      <Title style={{ textAlign: 'right', fontWeight: 'bold' }}>R${(parseFloat(item.price.replace(',', '.')) * item.quantity)}</Title>
                     </Column>
                   </Row>
                   <HorizontalRow />
@@ -170,19 +174,19 @@ export function Checkout() {
                 <Row>
                   <Column direction="inherit">
                     <Title>Total de itens</Title>
-                    <Title style={{ textAlign: 'right' }}>R$22</Title>
+                    <Title style={{ textAlign: 'right' }}>R$ {totalPrice.toFixed(2)}</Title>
                   </Column>
                 </Row>
                 <Row>
                   <Column direction="inherit">
                     <Title>Entrega</Title>
-                    <Title style={{ textAlign: 'right' }}>R$ 3,50</Title>
+                    <Title style={{ textAlign: 'right' }}>R$ 5</Title>
                   </Column>
                 </Row>
                 <Row>
                   <Column direction="inherit">
                     <Title style={{ fontWeight: 'bold', fontSize: '20px' }}>Total</Title>
-                    <Title style={{ textAlign: 'right', fontWeight: 'bold', fontSize: '20px' }}>R$ 3,50</Title>
+                    <Title style={{ textAlign: 'right', fontWeight: 'bold', fontSize: '20px' }}>R$ {(totalPrice + 5).toFixed(2)}</Title>
                   </Column>
                 </Row>
                 <Row>
